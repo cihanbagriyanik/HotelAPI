@@ -4,8 +4,9 @@
 ----------------------------------------------------------------------------- */
 //? Requaring
 const Reservation = require("../models/reservation");
-const User = require("../models/user");
 const Room = require("../models/room");
+const User = require("../models/user");
+const sendMail = require("../helpers/sendMail");
 
 /* -------------------------------------------------------------------------- */
 //? Reservation Controller:
@@ -60,6 +61,19 @@ module.exports = {
     /* -------------------------------------------------------------------------- */
 
     const data = await Reservation.create(req.body);
+    const dataUser = await User.findOne(data.userId);
+
+    sendMail(
+      // to:
+      dataUser.email,
+      // subject:
+      "Welcome",
+      // Message:
+      `
+          <h1>Welcome to Bla Bla Hotel</h1>
+          <p>Dear <b>${dataUser.username}</b>, thank you for your reservation!</p>
+      `
+    );
 
     res.status(201).send({
       error: false,
