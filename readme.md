@@ -13,6 +13,10 @@
             dbConnection.js
             swagger.json
         controllers/
+            auth.js
+            reservation.js
+            room.js
+            token.js
             user.js
         helpers/
             passwordEncrypt.js
@@ -25,11 +29,15 @@
             logger.js
             permissions.js
         models/
+            reservation.js
+            room.js
             token.js
             user.js
         routes/
             auth.js
             document.js
+            reservation.js
+            room.js
             token.js
             user.js
     .env
