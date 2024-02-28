@@ -1,4 +1,4 @@
-# PIZZA API
+# HOTEL API
 
 ### ERD:
 
