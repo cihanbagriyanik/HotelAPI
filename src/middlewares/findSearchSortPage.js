@@ -4,15 +4,15 @@
 ----------------------------------------------------------------------------- */
 
 module.exports = (req, res, next) => {
-  /* FILTERING & SEARCHING & SORTING & PAGINATION */
+  //*! FILTERING & SEARCHING & SORTING & PAGINATION */
 
-  // ### FILTERING ###
+  //? ### FILTERING ###
 
   // URL?filter[key1]=value1&filter[key2]=value2
   const filter = req.query?.filter || {};
   // console.log(filter)
 
-  // ### SEARCHING ###
+  //? ### SEARCHING ###
 
   // URL?search[key1]=value1&search[key2]=value2
   // https://www.mongodb.com/docs/manual/reference/operator/query/regex/
@@ -22,14 +22,14 @@ module.exports = (req, res, next) => {
   for (let key in search) search[key] = { $regex: search[key], $options: "i" }; // i: case insensitive
   // console.log(search)
 
-  // ### SORTING ###
+  //? ### SORTING ###
 
   // URL?sort[key1]=asc&sort[key2]=desc
   // asc: A-Z - desc: Z-A
   const sort = req.query?.sort || {};
   // console.log(sort)
 
-  // ### PAGINATION ###
+  //? ### PAGINATION ###
 
   // URL?page=3&limit=10
   let limit = Number(req.query?.limit);
@@ -45,9 +45,9 @@ module.exports = (req, res, next) => {
   skip = skip > 0 ? skip : page * limit;
   // console.log(typeof skip, skip)
 
-  /* FILTERING & SEARCHING & SORTING & PAGINATION */
+  //! * FILTERING & SEARCHING & SORTING & PAGINATION */
 
-  // Run for output:
+  //? Run for output:
   res.getModelList = async (Model, populate = null) => {
     return await Model.find({ ...filter, ...search })
       .sort(sort)
@@ -56,7 +56,7 @@ module.exports = (req, res, next) => {
       .populate(populate);
   };
 
-  // Details:
+  //? Details:
   res.getModelListDetails = async (Model) => {
     const data = await Model.find({ ...filter, ...search });
 
