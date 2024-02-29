@@ -380,7 +380,7 @@
                 "price": {
                   "example": "any"
                 },
-                "total_price": {
+                "totalPrice": {
                   "example": "any"
                 },
                 "night": {
@@ -446,7 +446,7 @@
                 "price": {
                   "example": "any"
                 },
-                "total_price": {
+                "totalPrice": {
                   "example": "any"
                 },
                 "night": {
@@ -513,7 +513,7 @@
                 "price": {
                   "example": "any"
                 },
-                "total_price": {
+                "totalPrice": {
                   "example": "any"
                 },
                 "night": {
@@ -655,7 +655,7 @@
             }
           }
         },
-        "arrival_date": {
+        "arrivalDate": {
           "type": "object",
           "properties": {
             "type": {
@@ -671,7 +671,7 @@
             }
           }
         },
-        "departure_date": {
+        "departureDate": {
           "type": "object",
           "properties": {
             "type": {
@@ -687,7 +687,7 @@
             }
           }
         },
-        "guest_number": {
+        "guestNumber": {
           "type": "object",
           "properties": {
             "type": {
@@ -735,7 +735,7 @@
             }
           }
         },
-        "total_price": {
+        "totalPrice": {
           "type": "object",
           "properties": {
             "type": {
@@ -752,7 +752,7 @@
     "Room": {
       "type": "object",
       "properties": {
-        "room_number": {
+        "roomNumber": {
           "type": "object",
           "properties": {
             "type": {
@@ -784,7 +784,7 @@
             }
           }
         },
-        "bed_type": {
+        "bedType": {
           "type": "object",
           "properties": {
             "type": {

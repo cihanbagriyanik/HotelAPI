@@ -56,7 +56,7 @@ module.exports = {
     }
 
     // //! Calculate total Price:
-    req.body.total_price = req.body.night * req.body.price;
+    req.body.totalPrice = req.body.night * req.body.price;
 
     /* -------------------------------------------------------------------------- */
 
@@ -116,7 +116,7 @@ module.exports = {
     }
 
     // //! Calculate total Price:
-    req.body.total_price = req.body.night * req.body.price;
+    req.body.totalPrice = req.body.night * req.body.price;
 
     /* -------------------------------------------------------------------------- */
 

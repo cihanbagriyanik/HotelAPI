@@ -41,20 +41,6 @@ module.exports = {
         #swagger.summary = "Create Room"
     */
 
-    /* -------------------------------------------------------------------------- */
-    // //! Logined UserId:
-    // req.body.userId = req?.user._id;
-
-    // //!  Set default price from Room:
-    // if (!req.body?.price) {
-    //   const room = await Room.findOne({ _id: req.body.roomId });
-    //   req.body.room = room.price;
-    // }
-
-    // //! Calculate total Price:
-    // req.body.totalPrice = req.body.night * req.body.price;
-    /* -------------------------------------------------------------------------- */
-
     const data = await Room.create(req.body);
 
     res.status(201).send({
@@ -70,7 +56,7 @@ module.exports = {
         #swagger.summary = "Get Single Room"
     */
 
-    const data = await Room.findOne({ _id: req.params.id })
+    const data = await Room.findOne({ _id: req.params.id });
     // .populate("userId");
 
     res.status(200).send({

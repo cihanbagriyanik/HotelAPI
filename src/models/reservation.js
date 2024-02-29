@@ -8,12 +8,12 @@ const { mongoose } = require("../configs/dbConnection");
 /* -------------------------------------------------------------------------- */
 // {
 //     "roomId": "65dfb6dd5ae11e53a46f1080",
-//     "arrival_date": "01.01.2024",
-//     "departure_date": "01.10.2024",
-//     "guest_number": 2,
+//     "arrivalDate": "01.01.2024",
+//     "departureDate": "01.10.2024",
+//     "guestNumber": 2,
 //     "night": 10,
 //     "price": 0
-//     "total_price": 0
+//     "totalPrice": 0
 // }
 /* -------------------------------------------------------------------------- */
 //? Reservation Model:
@@ -29,18 +29,18 @@ const ReservationSchema = new mongoose.Schema(
       ref: "room",
       required: true,
     },
-    arrival_date: {
+    arrivalDate: {
       type: String,
       trim: true,
       required: true,
     },
-    departure_date: {
+    departureDate: {
       type: String,
       trim: true,
       required: true,
     },
 
-    guest_number: {
+    guestNumber: {
       type: Number,
       trim: true,
       required: true,
@@ -58,7 +58,7 @@ const ReservationSchema = new mongoose.Schema(
       default: 0,
     },
 
-    total_price: {
+    totalPrice: {
       type: Number,
       default: 0,
     },
